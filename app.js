@@ -30,7 +30,7 @@ app.use('/api/category', categoryRoutes)
 app.use('/api/order', orderRoutes)
 app.use('/api/position', positionRoutes)
 
-if (process.env.NODE_END === 'production') {
+if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/dist/client'))
 
   app.get('*', (req, res) => {
@@ -41,5 +41,6 @@ if (process.env.NODE_END === 'production') {
     )
   })
 }
+
 
 module.exports = app
